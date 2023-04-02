@@ -1,14 +1,15 @@
 import './App.scss'
-import Body from './components/Body/Body';
-import Header from './components/Header/Header';
+import Content from './components/Content';
+import Loading from "./components/Loading";
+
 
 function App() {
-  return (
-    <div className="App">
-      <Header />
-      <Body />
-    </div>
-  );
+    return (
+        <div className="App">
+            <Content />
+            <Loading />
+        </div>
+    );
 }
 
 export default App;

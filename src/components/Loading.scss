@@ -1,0 +1,20 @@
+.loading-spinner {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    top: 0;
+    background-color: rgb(197, 196, 196);
+    width: 100vw;
+    height: 100vh;
+    z-index: 555;
+
+    .spinner-border {
+        --bs-spinner-width: 10rem;
+        --bs-spinner-height: 10rem;
+        --bs-spinner-border-width: 2.15em;
+    }
+
+}

@@ -1,0 +1,15 @@
+@import "~bootstrap/scss/bootstrap";
+@import './components/Header/Header.scss';
+@import './components/Body/BreakingNews/BreakingNews.scss';
+@import './components/Body/FeaturedNews/FeaturedNews.scss';
+
+.subtitle {
+    border-bottom: 3px solid $info;
+
+    span {
+        background-color: $info;
+        padding: 3px 10px;
+        color: white;
+        font-size: 18px;
+    }
+}

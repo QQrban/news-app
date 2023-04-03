@@ -1,3 +1,16 @@
 @import './Sports/Sports.scss';
+@import './AdditionalInfo/AdditionalInfo.scss';
 
 .featured-news {}
+
+
+
+@media (max-width: 992px) {
+    .featured-news {
+        flex-direction: column;
+    }
+
+    .featured-right-column {
+        width: 100% !important;
+    }
+}

@@ -26,7 +26,7 @@ const Sports = () => {
             {sport?.length ? (
                 <div className="sports-news">
                     <div className="sports-main">
-                        <div><img src={sport[0].urlToImage} alt="1" /></div>
+                        <img src={sport[0].urlToImage} alt="1" />
                         <h5 className='mt-3'>{sport[0].title}</h5>
                         <span className="publ-date">{moment(`${sport[0].publishedAt}`).format('DD.MM.YYYY')}</span>
                         <p className='mt-2 w-75 fs-5'>{(sport[0].description).replace(/#\S+/g, '').replace('Subscr...', '')}</p>

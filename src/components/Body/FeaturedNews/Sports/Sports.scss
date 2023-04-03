@@ -64,14 +64,47 @@
 @media (max-width: 1200px) {
     .sports-news {
         flex-direction: column !important;
-        align-items: center !important;
     }
 
     .sports-main {
-        width: 100% !important;
+        max-width: 100% !important;
+
+        p {
+            width: 100% !important;
+        }
     }
 
     .sports-secondary {
         width: 100%;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .item-text {
+        h6 {
+            font-size: 14px;
+        }
+
+        p {
+            font-size: 10px;
+        }
+    }
+}
+
+@media (max-width: 410px) {
+    .sports-item {
+        img {
+            width: 180px;
+            height: 80%;
+        }
+
+    }
+
+    .item-text {
+        h6 {
+            font-size: 12.5px;
+        }
     }
 }

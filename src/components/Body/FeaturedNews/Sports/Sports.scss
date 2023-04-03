@@ -1,3 +1,77 @@
-.sports {
-    
+.sports-news {
+    display: flex;
+    gap: 12px;
+}
+
+.sports-main {
+    max-width: 350px;
+
+    img {
+        width: 100%;
+    }
+
+    &:hover {
+        color: $primary !important;
+        cursor: pointer;
+
+        .publ-date {
+            color: black
+        }
+
+        img {
+            opacity: 0.9;
+        }
+    }
+
+    p {
+        color: black
+    }
+}
+
+.sports-secondary {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 6px;
+}
+
+.sports-item {
+    height: 150px;
+    display: flex;
+    gap: 15px;
+
+    img {
+        width: 225px;
+        height: 100%;
+    }
+
+    &:hover {
+        color: $primary !important;
+        cursor: pointer;
+
+        .publ-date {
+            color: black
+        }
+
+        img {
+            opacity: 0.9;
+        }
+    }
+}
+
+
+
+@media (max-width: 1200px) {
+    .sports-news {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .sports-main {
+        width: 100% !important;
+    }
+
+    .sports-secondary {
+        width: 100%;
+    }
 }

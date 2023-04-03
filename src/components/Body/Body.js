@@ -10,7 +10,7 @@ const Body = () => {
             <div className="App">
                 <Container className='mt-5'>
                     <div className='breaking-header mb-3 d-flex gap-2 align-items-center'>
-                        <h1>Breaking News</h1>
+                        <h1>Top News</h1>
                         <AiFillThunderbolt size={40} />
                     </div>
                     <BreakingNews />

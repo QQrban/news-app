@@ -1,3 +1,5 @@
+import SocialLinks from './SocialLinks';
+import PopularPost from './PopularPost';
 
 const AdditionalInfo = () => {
     return (
@@ -5,7 +7,20 @@ const AdditionalInfo = () => {
             <h4 className="subtitle">
                 <span>Social Links</span>
             </h4>
-            veniet atque obcaecati! Voluptates deserunt quod doloribus culpa minus odio earum nemo in architecto nam corporis eaque dolorum nisi mollitia nihil, provident pariatur laborum a, laudantium rerum ut. Voluptatem consectetur ratione ipsam, saepe delectus aspernatur officia aliquid sunt ipsa repellendus sequi. Aut consequuntur quaerat amet odio blanditiis, dolorum atque, hic fugit ut magnam mollitia temporibus. Aut maiores cumque nemo atque esse iste accusamus tenetur, eveniet nostrum suscipit eius iure aliquid laboriosam optio provident inventore itaque repellendus sit modi voluptatem deleniti magnam eaque? s veniam voluptatum aliquam animi alias magnam nobis quia tempora quasi minus recusandae officia necessitatibus officiis dolorem. Dolorum doloribus molestiae vitae, suscipit recusandae amet blanditiis labore atque reiciendis iure veniam quae quia tenetur mollitia totam tempore reprehenderit, sit error magni placeat. Facilis ducimus architecto unde voluptatum minima, iure fugiat debitis quisquam, inventore aliquam explicabo!
+            <SocialLinks />
+            <h4 className="subtitle mt-5">
+                <span>Popular Post</span>
+            </h4>
+            <PopularPost />
+            <div className="advertisement mt-5 d-flex flex-column align-items-center justify-content-center position-relative">
+                <h6>-Advertisement-</h6>
+                <img className='mt-1' style={{ filter: 'blur(1px)' }} src="https://picsum.photos/300/600" alt="advertisement" />
+                <div className="adv-text position-absolute top-25 text-white text-center">
+                    <div className='fs-3 fw-bold '>Lorem, ipsum.</div>
+                    <p className='mt-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Volnumquam qui aperiam.</p>
+                    <button className='border-0 bg-primary text-white mt-3 rounded p-1'>Purchase now</button>
+                </div>
+            </div>
         </section>
     )
 }

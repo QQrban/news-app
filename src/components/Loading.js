@@ -6,6 +6,7 @@ const Loading = () => {
 
 
     if (topNews) return null;
+
     return (
         <div className='loading-spinner'>
             <Spinner animation="border" role="status">

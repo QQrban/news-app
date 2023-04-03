@@ -1,11 +1,11 @@
 @import './Sports/Sports.scss';
 @import './AdditionalInfo/AdditionalInfo.scss';
-
-.featured-news {}
-
+@import './Entertainment/Entertainment.scss';
 
 
-@media (max-width: 992px) {
+
+
+@media (max-width: 768px) {
     .featured-news {
         flex-direction: column;
     }

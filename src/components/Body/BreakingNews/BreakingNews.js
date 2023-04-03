@@ -5,16 +5,24 @@ import { getTopNews } from '../../../services/apiServices';
 import { setTopNews } from '../../../services/stateService';
 
 const BreakingNews = () => {
-    const topNews = useSelector(state => state.topNews);
+    const topNews = useSelector((state) => state.topNews);
     const dispatch = useDispatch();
 
     useEffect(() => {
         try {
-            getTopNews()
-                .then(data => {
-                    const newData = data.articles.slice(1, 6)
-                    dispatch(setTopNews(newData))
-                })
+            getTopNews().then((data) => {
+                const newData = data.results.filter(result => result.media.length !== 0).slice(0, 11).map((article) => {
+                    return {
+                        title: article.title,
+                        author: article.byline.slice(2),
+                        date: article.published_date,
+                        img: article.media[0]['media-metadata'][2].url,
+                        url: article.url,
+                    };
+                });
+                dispatch(setTopNews(newData))
+                console.log(newData);
+            });
         } catch (err) {
             console.log(err);
         }
@@ -23,35 +31,36 @@ const BreakingNews = () => {
     return (
         <>
             {topNews?.length ? (
-                <Container className='breaking-container p-0'>
-                    <div className="main-news">
-                        <img src={topNews[0].urlToImage} alt="1" />
+                <Container className="breaking-container p-0">
+                    <div onClick={() => window.open(topNews[0].url)} className="main-news">
+                        <img src={topNews[0].img} alt="1" />
                         <div className="descr">
-                            <div className='p-2'>
+                            <div className="p-2">
                                 <span>{topNews[0].author}</span>
                                 <h4>{topNews[0].title}</h4>
                             </div>
                         </div>
                     </div>
-                    <div className='secondary-news'>
-                        {topNews?.length && topNews.slice(1).map((article, i) => (
-                            <div key={i} className='secondary-item'>
-                                <img src={article.urlToImage} alt="1" />
-                                <div className="descr">
-                                    <div className='p-2'>
-                                        <span>{article.author}</span>
-                                        <h4>{article.title}</h4>
+                    <div className="secondary-news">
+                        {topNews?.length &&
+                            topNews.slice(1, 5).map((article, i) => (
+                                <div onClick={() => window.open(article.url)} key={i} className="secondary-item">
+                                    <img src={article.img} alt="1" />
+                                    <div className="descr">
+                                        <div className="p-2">
+                                            <span>{article.author}</span>
+                                            <h4>{article.title}</h4>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
-
+                            ))}
                     </div>
                 </Container>
-            ) : <div className='main-loading'>Loading</div>}
+            ) : (
+                <div className="main-loading">Loading</div>
+            )}
         </>
+    );
+};
 
-    )
-}
-
-export default BreakingNews
+export default BreakingNews;

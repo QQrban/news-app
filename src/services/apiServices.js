@@ -1,10 +1,31 @@
 
 export const getTopNews = async () => {
-    const response = await fetch('https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=dd0107476b8f4e46b60758bd6c8906c1');
-    return response.json();
+    try {
+        const response = fetch('https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=x4cRbv0vVnmBqQxaEPCx6rfsqo27y8ha')
+        const result = (await response).json();
+        return result;
+    } catch (err) {
+        console.log(err);
+    }
 }
 
+
 export const getSportsNews = async () => {
-    const response = await fetch('https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=dd0107476b8f4e46b60758bd6c8906c1');
-    return response.json();
+    try {
+        const response = fetch('https://api.nytimes.com/svc/news/v3/content/nyt/sports.json?api-key=x4cRbv0vVnmBqQxaEPCx6rfsqo27y8ha')
+        const result = (await response).json();
+        return result;
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+export const getEntertainNews = async () => {
+    try {
+        const response = fetch('https://api.nytimes.com/svc/news/v3/content/nyt/magazine.json?api-key=x4cRbv0vVnmBqQxaEPCx6rfsqo27y8ha')
+        const result = (await response).json();
+        return result;
+    } catch (err) {
+        console.log(err);
+    }
 }

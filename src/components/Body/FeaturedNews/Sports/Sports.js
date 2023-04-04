@@ -43,8 +43,8 @@ const Sports = () => {
                         {sport.slice(1, 4).map((article, i) => (
                             <div onClick={() => window.open(article.url)} key={i} className="sports-item">
                                 <img src={article.img} alt="1" />
-                                <div className="item-text">
-                                    <h6>{article.title}</h6>
+                                <div className="sport-item-text">
+                                    <h6 className="fs-5">{article.title}</h6>
                                     <p className="publ-date text-secondary">{moment(`${article.date}`).format('DD.MM.YYYY')}</p>
                                 </div>
                             </div>

@@ -1,3 +1,9 @@
+.additional-info {
+    position: sticky;
+    position: -webkit-sticky;
+    top: -185px;
+}
+
 .popular-header {
     &:hover {
         color: $primary;
@@ -5,20 +11,42 @@
     }
 }
 
+
 .adv-text {
-    max-width: 250px;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 220px;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1200px) {
     .adv-text {
         max-width: 200px !important;
 
-        p {}
+        div {
+            font-size: 15px !important;
+        }
+
+        p {
+            font-size: 13px !important;
+        }
+
     }
 }
 
 @media (max-width: 768px) {
     .featured-news {
         flex-direction: column;
+    }
+
+    .adv-text {
+        max-width: 280px !important;
+
+        div {
+            font-size: 22px !important;
+        }
+
+        p {
+            font-size: 16px !important;
+        }
     }
 }

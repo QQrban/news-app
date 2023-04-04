@@ -2,8 +2,127 @@
 @import './AdditionalInfo/AdditionalInfo.scss';
 @import './Entertainment/Entertainment.scss';
 
+.science-food-column {
+    margin-top: 10px;
+    display: flex;
+    gap: 25px;
+}
+
+.science {
+    width: 50%;
+}
+
+.food {
+    width: 50%;
+}
+
+.dual-section {
+    &-main {
+        cursor: pointer;
+        min-height: 498px;
+
+        .dual-img-wrap {
+            overflow: hidden;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        &:hover {
+            h5 {
+                color: $primary;
+            }
+
+            img {
+                opacity: 0.9;
+            }
+        }
 
 
+    }
+
+    &-secondary {
+        cursor: pointer;
+        margin-top: 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+
+    }
+
+    &-item {
+        display: flex;
+        gap: 20px;
+
+        &:hover {
+            h6 {
+                color: $primary;
+            }
+
+            img {
+                opacity: 0.9;
+            }
+        }
+
+        img {
+            width: 170px;
+            height: 113px;
+        }
+    }
+
+    p {
+        color: $secondary;
+    }
+}
+
+@media (max-width: 1400px) {
+    .dual-img-wrap {
+        max-height: 231px !important;
+
+    }
+
+    .dual-section-main {
+        min-height: 407px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .dual-img-wrap {
+        max-height: 186px !important;
+
+    }
+
+    .dual-item-text {
+        h6 {
+            font-size: 14px !important;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .science {
+        width: 100%;
+    }
+
+    .food {
+        width: 100%;
+    }
+
+    .dual-section-main {
+        min-height: 100%;
+    }
+
+    .dual-img-wrap {
+        max-height: 100% !important;
+
+    }
+
+    .science-food-column {
+        flex-direction: column;
+    }
+
+}
 
 @media (max-width: 768px) {
     .featured-news {
@@ -12,5 +131,23 @@
 
     .featured-right-column {
         width: 100% !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .science-food-column {
+        flex-direction: column;
+    }
+
+    .science {
+        width: 100%;
+    }
+
+    .food {
+        width: 100%;
+    }
+
+    .dual-section-main {
+        max-width: none;
     }
 }

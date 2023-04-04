@@ -9,7 +9,7 @@ function Header() {
 
     return (
         <header className='shadow-sm bg-body rounded'>
-            <div className='top-menu-info position-fixed top-0 bg-dark w-100'>
+            <div className='top-menu-info bg-dark w-100'>
                 <Container className='d-flex justify-content-between align-items-center'>
                     <div className='text-white'>{moment().format('dddd, MMM DD, YYYY')}</div>
                     <Nav defaultActiveKey="/home" as="ul">
@@ -25,7 +25,7 @@ function Header() {
                     </Nav>
                 </Container>
             </div>
-            <Navbar className='mt-5'>
+            <Navbar className='mt-2'>
                 <Container>
                     <Navbar.Brand className='fs-1 fw-bold l' href="#home">React <span className='text-primary'>News</span></Navbar.Brand>
                     <Navbar.Toggle />

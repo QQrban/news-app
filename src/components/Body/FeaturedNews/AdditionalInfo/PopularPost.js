@@ -6,7 +6,7 @@ const PopularPost = () => {
 
     return (
         <article className="popularity">
-            {topNews?.length ? topNews.slice(6, 11).map((article, i) => (
+            {topNews?.length ? topNews.slice(6, 12).map((article, i) => (
                 <div onClick={() => window.open(article.url)} key={i} className="popularity-item border-bottom d-flex">
                     <p className="fw-bold popular-header">{article.title}</p>
                 </div>

@@ -11,7 +11,7 @@ const BreakingNews = () => {
     useEffect(() => {
         try {
             getTopNews().then((data) => {
-                const newData = data.results.filter(result => result.media.length !== 0).slice(0, 11).map((article) => {
+                const newData = data.results.filter(result => result.media.length !== 0).slice(0, 12).map((article) => {
                     return {
                         title: article.title,
                         author: article.byline.slice(2),
@@ -21,7 +21,6 @@ const BreakingNews = () => {
                     };
                 });
                 dispatch(setTopNews(newData))
-                console.log(newData);
             });
         } catch (err) {
             console.log(err);

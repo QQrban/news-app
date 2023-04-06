@@ -1,22 +1,11 @@
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Container } from 'react-bootstrap';
 import moment from "moment";
-import { setCategoryNews } from "../../services/stateService";
-import { getCategoryNews } from "../../services/apiServices";
 import AdditionalInfo from "./FeaturedNews/AdditionalInfo/AdditionalInfo";
 
 const CategoryBusiness = () => {
 
     const categoryNews = useSelector(state => state.categoryNews);
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        getCategoryNews()
-            .then(data => {
-                dispatch(setCategoryNews(data))
-            })
-    }, [dispatch])
 
     return (
         <main className='category'>

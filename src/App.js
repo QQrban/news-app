@@ -1,4 +1,8 @@
 import './App.scss'
+import { useEffect } from 'react';
+import { getCategoryNews } from './services/apiServices';
+import { useDispatch } from 'react-redux';
+import { setCategoryNews } from './services/stateService';
 import { Routes, Route } from "react-router-dom";
 import Header from './components/Header/Header';
 import MainContent from './components/Body/MainContent';
@@ -10,6 +14,15 @@ import CategorySport from './components/Body/CategorySport';
 import CategoryTravel from './components/Body/CategoryTravel';
 
 function App() {
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        getCategoryNews()
+            .then(data => {
+                dispatch(setCategoryNews(data))
+            })
+    }, [dispatch])
 
     return (
         <div className="App">

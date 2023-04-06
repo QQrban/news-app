@@ -1,24 +1,29 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { Container } from 'react-bootstrap';
-import { getCategoryNews } from "../../services/apiServices";
 import moment from "moment";
+import { setCategoryNews } from "../../services/stateService";
+import { getCategoryNews } from "../../services/apiServices";
 import AdditionalInfo from "./FeaturedNews/AdditionalInfo/AdditionalInfo";
 
 const CategoryBusiness = () => {
-    const [news, setNews] = useState(null);
+
+    const categoryNews = useSelector(state => state.categoryNews);
+    const dispatch = useDispatch();
+
     useEffect(() => {
         getCategoryNews()
             .then(data => {
-                setNews(data[0].world)
+                dispatch(setCategoryNews(data))
             })
-    }, [])
+    }, [dispatch])
 
     return (
         <main className='category'>
             <h2 className='text-center border-bottom p-4 fs-1'>World</h2>
             <Container className="category-container mt-5">
                 <div className="category-left-block">
-                    {news?.length ? news.map((article, i) => (
+                    {categoryNews?.length ? categoryNews[0].world.map((article, i) => (
                         <div key={i} className="category-item">
                             <img src={article.img} alt="1" />
                             <div className="category-item-text border-bottom pb-1">

@@ -1,27 +1,28 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Container } from 'react-bootstrap';
-import { getTopNews } from '../../../services/apiServices';
+import { getNews } from '../../../services/apiServices';
 import { setTopNews } from '../../../services/stateService';
 
 const BreakingNews = () => {
     const topNews = useSelector((state) => state.topNews);
     const dispatch = useDispatch();
-
+    const url = 'https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=x4cRbv0vVnmBqQxaEPCx6rfsqo27y8ha'
     useEffect(() => {
         try {
-            getTopNews().then((data) => {
-                const newData = data.results.filter(result => result.media.length !== 0).slice(0, 12).map((article) => {
-                    return {
-                        title: article.title,
-                        author: article.byline.slice(2),
-                        date: article.published_date,
-                        img: article.media[0]['media-metadata'][2].url,
-                        url: article.url,
-                    };
+            getNews(url)
+                .then((data) => {
+                    const newData = data.results.filter(result => result.media.length !== 0).slice(0, 12).map((article) => {
+                        return {
+                            title: article.title,
+                            author: article.byline.slice(2),
+                            date: article.published_date,
+                            img: article.media[0]['media-metadata'][2].url,
+                            url: article.url,
+                        };
+                    });
+                    dispatch(setTopNews(newData))
                 });
-                dispatch(setTopNews(newData))
-            });
         } catch (err) {
             console.log(err);
         }

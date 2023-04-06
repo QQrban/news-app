@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
-import { getFooterNews } from "../../services/apiServices";
+import { getNews } from "../../services/apiServices";
 import moment from "moment";
 import { AiOutlinePhone, AiOutlineMail } from 'react-icons/ai'
 import { BsFacebook, BsGithub, BsInstagram, BsLinkedin } from 'react-icons/bs';
@@ -8,8 +8,10 @@ import { BsFacebook, BsGithub, BsInstagram, BsLinkedin } from 'react-icons/bs';
 const Footer = () => {
     const [footerNews, setFooterNews] = useState(null);
 
+    const url = 'https://content.guardianapis.com/search?q=lifestyle&from-date=2014-01-01&api-key=1e39985b-e6ab-40fa-8c60-28d971da63c4&show-fields=thumbnail'
+
     useEffect(() => {
-        getFooterNews()
+        getNews(url)
             .then(data => {
                 const newData = data.response.results.slice(0, 6).map(result => {
                     return {

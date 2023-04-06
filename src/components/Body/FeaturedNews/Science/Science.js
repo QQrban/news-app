@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import moment from "moment";
-import { getScienceNews } from "../../../../services/apiServices";
+import { getNews } from "../../../../services/apiServices";
 
 const Science = () => {
     const [science, setScience] = useState(null);
 
+    const url = 'https://api.nytimes.com/svc/news/v3/content/nyt/science.json?api-key=x4cRbv0vVnmBqQxaEPCx6rfsqo27y8ha'
+
     useEffect(() => {
-        getScienceNews()
+        getNews(url)
             .then(data => {
                 const newData = data.results.slice(0, 4).map(article => {
                     return {

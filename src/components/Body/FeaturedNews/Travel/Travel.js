@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
-import { getTravelNews } from "../../../../services/apiServices";
+import { getNews } from "../../../../services/apiServices";
 import moment from "moment";
 
 const Travel = () => {
     const [travel, setTravel] = useState(null);
 
+    const url = 'https://content.guardianapis.com/search?q=travel&from-date=2014-01-01&api-key=1e39985b-e6ab-40fa-8c60-28d971da63c4&show-fields=thumbnail';
+
     useEffect(() => {
         try {
-            getTravelNews()
+            getNews(url)
                 .then(data => {
                     const newData = data.response.results.map(result => {
                         return {

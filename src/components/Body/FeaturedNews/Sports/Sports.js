@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
-import { getSportsNews } from "../../../../services/apiServices";
+import { getNews } from "../../../../services/apiServices";
 import moment from "moment/moment";
-// import { useSelector, useDispatch } from "react-redux";
+
 const Sports = () => {
     const [sport, setSport] = useState(null);
 
+    const url = 'https://api.nytimes.com/svc/news/v3/content/nyt/sports.json?api-key=x4cRbv0vVnmBqQxaEPCx6rfsqo27y8ha'
 
     useEffect(() => {
         try {
-            getSportsNews()
+            getNews(url)
                 .then(data => {
                     const newData = data.results.slice(0, 4).map(result => {
                         return {

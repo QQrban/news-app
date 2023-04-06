@@ -2,23 +2,18 @@ import { configureStore, createAction, createReducer } from '@reduxjs/toolkit';
 
 const initialState = {
     topNews: null,
-    sportNews: null,
-    news: null,
+    categoryNews: null,
 };
 
-export const setNews = createAction('setNews');
 export const setTopNews = createAction('setTopNews');
-export const setSportNews = createAction('setSportNews');
+export const setCategoryNews = createAction('setCategoryNews');
 
 const reducer = createReducer(initialState, {
-    [setNews]: (state, action) => {
-        state.news = action.payload;
-    },
     [setTopNews]: (state, action) => {
         state.topNews = action.payload;
     },
-    [setSportNews]: (state, action) => {
-        state.topNews = action.payload;
+    [setCategoryNews]: (state, action) => {
+        state.categoryNews = action.payload;
     },
 });
 

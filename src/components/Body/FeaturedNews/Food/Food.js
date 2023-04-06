@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import moment from "moment";
-import { getFoodNews } from "../../../../services/apiServices";
+import { getNews } from "../../../../services/apiServices";
 
 const Food = () => {
     const [food, setFood] = useState(null);
 
+    const url = 'https://api.nytimes.com/svc/news/v3/content/nyt/food.json?api-key=x4cRbv0vVnmBqQxaEPCx6rfsqo27y8ha'
+
     useEffect(() => {
-        getFoodNews()
+        getNews(url)
             .then(data => {
                 const newData = data.results.filter(result => result.multimedia !== null).slice(0, 4).map(article => {
                     return {

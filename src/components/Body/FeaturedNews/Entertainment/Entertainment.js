@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
-import { getEntertainNews } from '../../../../services/apiServices';
+import { getNews } from '../../../../services/apiServices';
 
 const Entertainment = () => {
     const [entertain, setEntertain] = useState(null);
+    const url = 'https://content.guardianapis.com/search?q=entertainment&from-date=2014-01-01&api-key=1e39985b-e6ab-40fa-8c60-28d971da63c4&show-fields=thumbnail'
 
     useEffect(() => {
         try {
-            getEntertainNews()
+            getNews(url)
                 .then(data => {
                     const newData = data.response.results.slice(0, 4).map(result => {
                         return {

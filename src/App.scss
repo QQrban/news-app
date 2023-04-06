@@ -3,6 +3,7 @@
 @import './components/Body/BreakingNews/BreakingNews.scss';
 @import './components/Body/FeaturedNews/FeaturedNews.scss';
 @import './components/Loading.scss';
+@import './components/Footer/Footer.scss';
 
 .subtitle {
     border-bottom: 3px solid $info;
@@ -19,6 +20,7 @@ body,
 html {
     overflow-x: hidden;
     height: 100%;
+    background-color: #f8f8f8;
 }
 
 ul {
@@ -55,11 +57,9 @@ header {
     position: sticky;
     position: -webkit-sticky;
     z-index: 55 !important;
-    top: -140px;
+    top: -40px;
 }
 
-@media (max-width: 440px) {
-    header {
-        top: -160px;
-    }
+svg {
+    cursor: pointer;
 }

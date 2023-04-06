@@ -1,0 +1,44 @@
+.travel-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 16px;
+
+    .travel-item {
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+
+        &:hover {
+            .travel-item-text {
+                h6 {
+                    color: $primary;
+                }
+            }
+        }
+
+        img {
+            width: 100%;
+            filter: brightness(30%);
+        }
+
+        &-text {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            color: white;
+            transform: translateY(-50%);
+            width: 100%;
+
+            h6 {
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .travel-container {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,48 +1,9 @@
-.navbar-text {
-    svg {
-        &:hover {
-            color: gray;
-        }
-    }
-}
 
-.nav-item {
-    a {
-        &:hover {
-            text-shadow: 1px 1px 5px white;
-        }
-    }
-}
-
-.top-menu-info {
-    z-index: 55 !important;
-}
-
-.nav-website {
-
-
-    .nav-link {
-        color: black;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-size: 16px;
-
-        &:hover {
-            color: $primary;
-        }
-    }
-
-
-}
-
-
-
-@media (max-width: 426px) {
-    header {
-        .top-menu-info {
-            .container {
-                flex-direction: column;
-            }
-        }
+.nav-link {
+    color: black !important;
+    font-weight: bold !important;
+    font-size: 17px;
+    &:hover {
+        color: $primary !important;
     }
 }

@@ -3,6 +3,7 @@ import Entertainment from "./Entertainment/Entertainment";
 import Food from "./Food/Food";
 import Science from "./Science/Science";
 import Sports from "./Sports/Sports"
+import Travel from "./Travel/Travel";
 
 const FeaturedNews = () => {
     return (
@@ -14,6 +15,7 @@ const FeaturedNews = () => {
                     <Science />
                     <Food />
                 </div>
+                <Travel />
             </div>
             <div className="featured-right-column">
                 <AdditionalInfo />

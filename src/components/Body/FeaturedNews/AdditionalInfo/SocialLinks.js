@@ -31,7 +31,6 @@ const SocialLinks = () => {
         },
     ];
 
-
     return (
         <div className='social-links'>
             <ul className='m-0'>

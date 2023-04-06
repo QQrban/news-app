@@ -8,7 +8,7 @@ const Entertainment = () => {
         try {
             getEntertainNews()
                 .then(data => {
-                    const newData = data.results.slice(0, 4).map(result => {
+                    const newData = data.results.filter(result => result.multimedia !== null).slice(0, 4).map(result => {
                         return {
                             url: result.url,
                             title: result.title,

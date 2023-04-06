@@ -10,6 +10,7 @@ const HeaderLinks = () => {
     const navigate = useNavigate();
 
     const handleClick = (link) => {
+        window.scroll(0, 0);
         navigate(link);
         setExpanded(false)
     }

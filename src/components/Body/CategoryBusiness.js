@@ -9,7 +9,6 @@ const CategoryBusiness = () => {
     useEffect(() => {
         getCategoryNews()
             .then(data => {
-                console.log(data);
                 setNews(data[0].business)
             })
     }, [])

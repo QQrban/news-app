@@ -8,12 +8,12 @@ const Entertainment = () => {
         try {
             getEntertainNews()
                 .then(data => {
-                    const newData = data.results.filter(result => result.multimedia !== null).slice(0, 4).map(result => {
+                    const newData = data.response.results.slice(0, 4).map(result => {
                         return {
-                            url: result.url,
-                            title: result.title,
-                            author: result.byline,
-                            img: result.multimedia[2].url
+                            url: result.webUrl,
+                            title: result.webTitle,
+                            author: 'Guardian',
+                            img: result.fields.thumbnail
                         }
                     });
                     setEntertain(newData);
@@ -35,7 +35,7 @@ const Entertainment = () => {
                             <img src={article.img} alt="article" />
                             <div className="descr">
                                 <div className='p-2'>
-                                    <span>{article.author.slice(2)}</span>
+                                    <span>{article.author}</span>
                                     <h4>{article.title}</h4>
                                 </div>
                             </div>

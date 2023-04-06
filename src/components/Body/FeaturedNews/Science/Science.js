@@ -8,7 +8,7 @@ const Science = () => {
     useEffect(() => {
         getScienceNews()
             .then(data => {
-                const newData = data.results.filter(result => result.multimedia !== null).slice(0, 4).map(article => {
+                const newData = data.results.slice(0, 4).map(article => {
                     return {
                         url: article.url,
                         date: article.published_date,

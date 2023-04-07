@@ -3,9 +3,7 @@ import { useSelector } from 'react-redux';
 
 const Loading = () => {
     const topNews = useSelector(state => state.topNews);
-
-
-    if (topNews) return null;
+    // if (topNews) return null;
 
     return (
         <div className='loading-spinner'>

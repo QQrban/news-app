@@ -12,13 +12,13 @@ const HeaderLinks = () => {
     const handleClick = (link) => {
         window.scroll(0, 0);
         navigate(link);
-        setExpanded(false)
+        setExpanded(false);
     }
 
     return (
         <Navbar expanded={expanded} collapseOnSelect expand="lg" >
             <Container >
-                <Navbar.Brand href="#home">
+                <Navbar.Brand href="/">
                     <span className=" fs-3 fw-bold">React<span className='text-primary'>News</span></span>
                 </Navbar.Brand>
                 <Navbar.Toggle onClick={() => setExpanded(expanded ? false : "expanded")} aria-controls="responsive-navbar-nav" />
